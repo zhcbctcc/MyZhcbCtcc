@@ -1,13 +1,22 @@
 https://www.jianshu.com/p/6ec91271ec33
   
 #第一个程序：图片转字符串
+#图片转字符画的关键思想是将图片的灰度值与你自己设定的字符集之间建立映射关系，不同区间的灰度值对应不同的字符，之后将
+#图片每一个像素对应的字符打印出来就是我们要的字符画啦~ 
+# 这里提供两种方法：
+# 先将彩色图片转换为黑白图片，然后直接将每个像素点的灰度值与字符集建立映射。
+# 获取图片的RGB值，利用公式： Gray = R*0.299 + G*0.587 + B*0.114
+# 计算可得每个像素点的灰度值，之后再建立映射即可。
+
+示例中的代码是用第一种方法
+
 from PIL import Image
 
 codeLib = '''朝冰 '''#生成字符画所需的字符集
 count = len(codeLib)
 
 def transform1(image_file):
-    image_file = image_file.convert("L")#转换为黑白图片，参数"L"表示黑白模式
+    image_file = image_file.convert("L")#转换为黑白图片，参数"L"表示黑白模式 黑白图片只有一个通道
     codePic = ''
     for h in range(0,image_file.size[1]):  #size属性表示图片的分辨率，'0'为横向大小，'1'为纵向
         for w in range(0,image_file.size[0]):
