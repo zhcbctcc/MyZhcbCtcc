@@ -1,7 +1,7 @@
-#第一个代码
+#第一个代码：打开图像，计算像素
 # from PIL import Image
 #
-# im  = Image.open("psb.jpg")
+# im  = Image.open("psb.jpg") #
 # w,h = im.size
 # print('Original image size :%s%s' % (w,h))
 #
@@ -10,13 +10,13 @@
 #
 # im.save('thumbnail.jpg','jpeg')
 
-# #第二个代码
+# #第二个代码：裁剪图像，并以另一种格式存储
 # from PIL import Image,ImageFilter
 # im = Image.open('psb.jpg')
 # im2 = im.filter(ImageFilter.BLUR)
 # im2.save('blur.jpg','jpeg')
 
-# #第三个代码
+# #第三个代码：生成随机验证码
 # from PIL import Image, ImageDraw,ImageFont,ImageFilter
 # import random
 #
@@ -42,3 +42,5 @@
 #
 # image = image.filter(ImageFilter.BLUR)
 # image.save('code.jpg','jpeg')
+
+
